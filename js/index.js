@@ -3,7 +3,7 @@ const resp = document.querySelector("ul")                                       
 
 
 let tarefas = [
-    ...[{ idTarefa: "teste3", tituloTarefa: "testando obj", concluido: false }]                // cria um array de um unico objeto e acrescenta ao array TEREFAS com o metodo SPREAD
+    ...[{ idTarefa: "teste3", tituloTarefa: "testando obj", concluido: false }]             // cria um array de um unico objeto e acrescenta ao array TEREFAS com o metodo SPREAD
 ]
 
 
@@ -14,7 +14,7 @@ frm.addEventListener("submit", (e) => {                                         
 
     const idTarefa = frm.inId.value                                                         // Pega o Valor do ID
     const tituloTarefa = frm.inTitulo.value                                                 // Pega o Valot do TItulo
-    const concluido = false                                                                // Valor fixo da VARIAVEL concluido para FALSE 
+    const concluido = false                                                                 // Valor fixo da VARIAVEL concluido para FALSE 
 
     tarefas = [...tarefas, { idTarefa, tituloTarefa, concluido }]                           // usa SPREAD para reatribuir os objetos novos a lista junto com os valores anteriores da lista    
 
@@ -27,7 +27,10 @@ frm.addEventListener("submit", (e) => {                                         
         li.innerHTML = `                                                                    
         ID da Tarefa: ${tarefa.idTarefa} -  
         Título da Tarefa: ${tarefa.tituloTarefa} - 
-        Concluido: ${tarefa.concluido ? "sim":"não"}`                                       // A variavel LI recebe os valores de cada elemento e seus valores dos objetos
+        Concluido: ${tarefa.concluido ? "sim":"não"}
+        <button ${tarefa.concluido ? "disabled" : ""} data-index="${indiceLista}">
+            Concluir
+        </button>`                                                                          // A variavel LI recebe os valores de cada elemento e seus valores dos objetos
 
         resp.appendChild(li)                                                                // A tag resp ira incomporar os valores do FOREACH
     })
@@ -35,6 +38,29 @@ frm.addEventListener("submit", (e) => {                                         
     if(tarefas.length > 1){
         alert('Tarefa adicionado com sucesso')                                              // A partir do length se for maior que Pq 1 e já é valor inicial Se for maior ele exibe o alert
     }
+
     frm.reset()                                                                             // Limpa todos os campos do form
     frm.inId.focus()                                                                        // Foca na tag INPUT com valor InID
-});
+
+    const botoes = document.querySelectorAll("button[data-index]")                          // pega o valor anterior do botão já criado
+    botoes.forEach((botao, incideParaIndicar) => {
+    botao.addEventListener("click", () => {                                                 // Evento click ao botão BUTTON
+        tarefas[incideParaIndicar].concluido = true
+
+        resp.innerHTML = ""                                                                 // Remove os Valores anteriores
+        tarefas.forEach((tarefa, ValorParaDesabilitar) => {
+            const li = document.createElement("li");                                        // Cria o mesmo esquema anterior de criar um li
+            li.innerHTML = `
+                ID da Tarefa: ${tarefa.idTarefa} -  
+                Título da Tarefa: ${tarefa.tituloTarefa} - 
+                Concluído: ${tarefa.concluido ? "Sim" : "Não"}
+                <button ${tarefa.concluido ? "disabled" : ""} data-index="${ValorParaDesabilitar}">
+                    Concluir
+                </button>
+                `                                                                           // Responsavel por Desabilitar o botão
+                resp.appendChild(li)                                                        // Atribui o novo valor com o possibilidade de desabiliatar o botão 
+            })
+        })                                                                                  // PROF CHEGAR ATÉ ESTÁ PARTE FOI UMA LUTA, TIME QUE RECORRER A CODIGOS PRONTOS PARA VER COMO IMPLIMENTAR ESTAS NOVAS FUNCOES DE DESSABILITAR DE FALSE PARA TRUE
+    })
+})
+
