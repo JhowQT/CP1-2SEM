@@ -21,7 +21,7 @@ frm.addEventListener("submit", (e) => {                                         
     resp.innerHTML = ""                                                                     // Limpa a TAG ul cada vez que o evento for acionado
     
     tarefas.forEach((tarefa, indiceLista) => {                                              // Cria um forEACh para iterar nos indices e elementos e seus valores 
-
+                                                                                            // AQUI FOI JÀ FEITO A 4 QUESTÂO
         const li = document.createElement("li")                                             // variavel que cria a tag li dentro da TAG ul
 
         li.innerHTML = `                                                                    
