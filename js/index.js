@@ -64,3 +64,23 @@ frm.addEventListener("submit", (e) => {                                         
     })
 })
 
+frm.btnPendentes.addEventListener("click",()=>{                                             // cria um novo evento para filtrar os pendentes
+    
+    const taredfaPendente = tarefas.filter(tarefa => !tarefa.concluido)                     // pega o a tarefa invertendo o seu valor
+
+    resp.innerHTML = ""                                                                     // limpa o campo do ul
+
+    taredfaPendente.forEach((tarefa)=>{
+        const li = document.createElement("li")                                             // cria tag li para receber os valores dos objetos
+        
+        li.innerHTML = `
+            ID da Tarefa: ${tarefa.idTarefa} -  
+            Título da Tarefa: ${tarefa.tituloTarefa} - 
+            Concluído: ${tarefa.concluido ? "Sim" : "Não"}
+        `                                                                                   // valores dos objetos que serão mostrados dentro do LI
+        resp.appendChild(li)                                                                // atribui uma nova tag ao UL onde li ja tem valores prontos
+                                                                                            // como os valores foram invertidos pela negação apenas aqueles com não são mostrados
+    })
+
+
+})
