@@ -31,7 +31,10 @@ frm.addEventListener("submit", (e) => {                                         
 
         resp.appendChild(li)                                                                // A tag resp ira incomporar os valores do FOREACH
     })
-   
+
+    if(tarefas.length > 1){
+        alert('Tarefa adicionado com sucesso')                                              // A partir do length se for maior que Pq 1 e já é valor inicial Se for maior ele exibe o alert
+    }
     frm.reset()                                                                             // Limpa todos os campos do form
     frm.inId.focus()                                                                        // Foca na tag INPUT com valor InID
 });
