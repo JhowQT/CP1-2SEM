@@ -35,18 +35,46 @@ main h1{
     text-decoration:underline;
 }
 section{
-    border: solid 2px red;
     height:80vh;
     width:90vw;
 }
 form{
-    border:solid 1px black;
-    height:20vh;
+    height:22vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    background-color: #a3a6aa;
+    border-radius: 5px;
+}
+#divInput{
+    display: flex;
+    flex-direction: row;
+    height:15vh;
+    justify-content: space-evenly;
+}
+#inBotoes{
+    height:5vh;
 }
 label{
     font-weight: bold;
     color:#006663;
 }
+#divId{
+    width:30vw;
+    display: flex;
+    flex-direction: column;
+}
+#divTitulo{
+    width:50vw;
+    display: flex;
+    flex-direction: column;    
+}
+#inTitulo{
+    width:90%;
+    height:40%;
+}
+
+
 
 /*Footer da página*/
 footer{
@@ -55,18 +83,19 @@ footer{
     display: flex;
     align-items: center;
     justify-content:space-around;
-}.divFooter{
+}
+.divFooter{
     height:7vh;
 }
 footer p{
     color: #ffffff;
 }
-article{
+#divFooter{
     display: flex;
     align-items: center;
     width:25vw;
 }
-article p{
+#divFooter p{
     width:15vw;
     height:15vh;
 }

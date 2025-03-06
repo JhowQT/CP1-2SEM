@@ -15,18 +15,28 @@
     <main>
         <h1>Programa Gerenciador de Tarefas</h1>
         <section>
+            <h2>Titulo 2</h2>
             <form>
-                <div>
-                    <label for="inTitulo" >Digite o nome do titulo da tarefa</label>
-                    <input type="text" id="inTitulo" name="inTitulo" required autofocus>
-                </div>
-                <div>
-                    <label for="inDescricao" >Use este campo para descrever a tarefa</label>
-                    <textarea name="" id=""></textarea>
+                <div id="divInput">
+                    <div id="divId">
+                        <label for="inId" >Digite o nome do ID da tarefa:</label>
+                        <input type="text" id="inId" name="inId" required autofocus>
+                    </div>
+                    <div id="divTitulo">
+                        <label for="inTitulo">Use este campo para descrever o Titulo da tarefa:</label>
+                        <textarea name="inTitulo" id="inTitulo"></textarea>
+                    </div>
+                </div>    
+                <div id="inBotoes">
+                    <input type="submit" value="Criar nova tarefa" id="btnNovaTarefa">
+                    <input type="button" value="Concluidos" id="btnCloncluido">
+                    <input type="button" value="Filtrar Pendentes" id="btnPendentes">
                 </div>  
             </form>
             <div>
-                Aqui vão as terefas
+                <ul>
+                    
+                </ul>
             </div>
         </section>
     </main>
@@ -35,12 +45,12 @@
             <p>Criador por Jhonatan Quispe Torrez</p>
             <p>E-mail: jhon.q.torrez@gmail.com</p>
         </div>
-        <article>
+        <div id="divFooter">
             <p class="article-top">
                 Atividade para reforçar as praticas de manipulação do DOM com o JavaScript, junto com o HTML e CSS.
             </p>
             <img class="img2" src="./img/img2-cp4.jpg" alt="logo Fiap">
-        </article>
+        </div>
     </footer>
 </body>
 </html>
