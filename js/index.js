@@ -82,5 +82,10 @@ frm.btnPendentes.addEventListener("click",()=>{                                 
                                                                                             // como os valores foram invertidos pela negação apenas aqueles com não são mostrados
     })
 
-
 })
+
+const tituloMaiusculo = tarefas.map(tarefa => ({                                            // metodo MAP faz uma copia do array e pega o valor tituloTarefa e transforma em MAIUSCULO com o TOUPPERCASE
+    ...tarefa,tituloTarefa:tarefa.tituloTarefa.toUpperCase()
+}))
+
+console.log(tituloMaiusculo)
