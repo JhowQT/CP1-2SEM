@@ -7,7 +7,6 @@ let tarefas = [
 ]
 
 
-
 frm.addEventListener("submit", (e) => {                                                     // Criação do Evento para capturar os valores
     e.preventDefault()
 
