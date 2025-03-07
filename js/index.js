@@ -102,5 +102,10 @@ frm.btnTarefaEspecifica.addEventListener("click", ()=>{                         
     const {tituloTarefa, concluido} = tarefas[tarefas.length - 1]                           // variavel que recebe o destructuring
     alert(`Titulo da Tarefa: ${tituloTarefa}\n                                              
         Pendencia da Tarefa: ${concluido ? "sim":"não"}`)                                   // Alert para mostrar a tarefa especifica
-
 })
+
+function criaTarefa(idTarefa, tituloTarefa, concluido = false){                             // função simples para criar uma tarefa
+    return {idTarefa, tituloTarefa, concluido}                                              // Cria um objeto usando o return junto com odestructuring
+}                                                                                                   
+const functionCriaTarefa = criaTarefa("Teste","Deu certo")                                  // Imprime no console o a function
+console.log(functionCriaTarefa)
