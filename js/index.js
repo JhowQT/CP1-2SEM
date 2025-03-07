@@ -96,3 +96,11 @@ frm.btnCloncluido.addEventListener("click", () =>{                              
         {concluido}) => quantidadeConcluido + concluido,0)                                  // Faz um somatorio dos concluidos dos CONCLUIDOS por regra TRUE e FALSE são contabilizados com 1 e 0 isso ajuda na soma
     alert(`Aqui estao as quantidades de tarefas que já foram concluidas: ${tarefasConcluidas}`)// Faz o alert das somas dos TRUES e mostra na tela apos clicar no BOTÂO CONCLUIDO
 })
+
+frm.btnTarefaEspecifica.addEventListener("click", ()=>{                                     // evento para o alert da tarefa especifica
+    
+    const {tituloTarefa, concluido} = tarefas[tarefas.length - 1]                           // variavel que recebe o destructuring
+    alert(`Titulo da Tarefa: ${tituloTarefa}\n                                              
+        Pendencia da Tarefa: ${concluido ? "sim":"não"}`)                                   // Alert para mostrar a tarefa especifica
+
+})
