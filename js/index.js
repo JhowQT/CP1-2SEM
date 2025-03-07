@@ -89,3 +89,10 @@ const tituloMaiusculo = tarefas.map(tarefa => ({                                
 }))
 
 console.log(tituloMaiusculo)
+
+frm.btnCloncluido.addEventListener("click", () =>{                                          // cria um evento para Habilitar o alert a partir do botão CONCLUIDO
+
+    const tarefasConcluidas = tarefas.reduce((quantidadeConcluido,                          // variavel que recebe o retorno do reduce com os valores TRUE que ele ira encotrar
+        {concluido}) => quantidadeConcluido + concluido,0)                                  // Faz um somatorio dos concluidos dos CONCLUIDOS por regra TRUE e FALSE são contabilizados com 1 e 0 isso ajuda na soma
+    alert(`Aqui estao as quantidades de tarefas que já foram concluidas: ${tarefasConcluidas}`)// Faz o alert das somas dos TRUES e mostra na tela apos clicar no BOTÂO CONCLUIDO
+})
